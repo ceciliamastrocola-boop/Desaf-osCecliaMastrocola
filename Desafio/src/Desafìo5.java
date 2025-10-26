@@ -15,7 +15,7 @@ public class Desafìo5 extends javax.swing.JFrame {
     
     private double numero1 = 0;
     private double numero2 = 0;
-    private String Operador ="";
+    private String operador ="";
     private String numeroActual ="";
     
     public Desafìo5() {
@@ -169,6 +169,11 @@ public class Desafìo5 extends javax.swing.JFrame {
         btnComa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnComa.setForeground(new java.awt.Color(204, 102, 0));
         btnComa.setText(",");
+        btnComa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnComa, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 132, 59, 36));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 310, 180));
@@ -176,18 +181,38 @@ public class Desafìo5 extends javax.swing.JFrame {
         btnMultiplicacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnMultiplicacion.setForeground(new java.awt.Color(204, 102, 0));
         btnMultiplicacion.setText("*");
+        btnMultiplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicacionActionPerformed(evt);
+            }
+        });
 
         btnDivision.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnDivision.setForeground(new java.awt.Color(204, 102, 0));
         btnDivision.setText("/");
+        btnDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivisionActionPerformed(evt);
+            }
+        });
 
         btnSuma.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSuma.setForeground(new java.awt.Color(204, 102, 0));
         btnSuma.setText("+");
+        btnSuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumaActionPerformed(evt);
+            }
+        });
 
         btnResta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnResta.setForeground(new java.awt.Color(204, 102, 0));
         btnResta.setText("-");
+        btnResta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRestaActionPerformed(evt);
+            }
+        });
 
         btnResultado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnResultado.setForeground(new java.awt.Color(204, 102, 0));
@@ -281,6 +306,39 @@ public class Desafìo5 extends javax.swing.JFrame {
         numeroActual += "9";
         txtResultado.setText(numeroActual);        // TODO add your handling code here:
     }//GEN-LAST:event_btnN9ActionPerformed
+
+    private void btnSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumaActionPerformed
+        numero1 = Double.parseDouble(numeroActual);
+        operador = "+";
+        numeroActual= "";
+        txtResultado.setText("+");
+    }//GEN-LAST:event_btnSumaActionPerformed
+
+    private void btnRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestaActionPerformed
+        numero1 = Double.parseDouble(numeroActual);
+        operador = "-";
+        numeroActual= "";
+        txtResultado.setText("-");        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRestaActionPerformed
+
+    private void btnMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicacionActionPerformed
+        numero1 = Double.parseDouble(numeroActual);
+        operador = "*";
+        numeroActual= "";
+        txtResultado.setText("*");        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMultiplicacionActionPerformed
+
+    private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisionActionPerformed
+        numero1 = Double.parseDouble(numeroActual);
+        operador = "/";
+        numeroActual= "";
+        txtResultado.setText("/");        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDivisionActionPerformed
+
+    private void btnComaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComaActionPerformed
+ numeroActual += ".";
+        txtResultado.setText(numeroActual);              // TODO add your handling code here:
+    }//GEN-LAST:event_btnComaActionPerformed
 
     /**
      * @param args the command line arguments
