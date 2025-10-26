@@ -51,6 +51,7 @@ public class Desafìo5 extends javax.swing.JFrame {
         btnSuma = new javax.swing.JButton();
         btnResta = new javax.swing.JButton();
         btnResultado = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -217,6 +218,20 @@ public class Desafìo5 extends javax.swing.JFrame {
         btnResultado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnResultado.setForeground(new java.awt.Color(204, 102, 0));
         btnResultado.setText("=");
+        btnResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResultadoActionPerformed(evt);
+            }
+        });
+
+        btnBorrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBorrar.setForeground(new java.awt.Color(204, 102, 0));
+        btnBorrar.setText("C");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -231,9 +246,11 @@ public class Desafìo5 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnResta, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnMultiplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnDivision, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnMultiplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnDivision, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39))
         );
         jPanel3Layout.setVerticalGroup(
@@ -245,9 +262,11 @@ public class Desafìo5 extends javax.swing.JFrame {
                     .addComponent(btnMultiplicacion, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                     .addComponent(btnSuma, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                     .addComponent(btnResta, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
-                .addGap(14, 14, 14)
-                .addComponent(btnResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnResultado, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(btnBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 290, 100));
@@ -340,6 +359,48 @@ public class Desafìo5 extends javax.swing.JFrame {
         txtResultado.setText(numeroActual);              // TODO add your handling code here:
     }//GEN-LAST:event_btnComaActionPerformed
 
+    private void btnResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoActionPerformed
+        
+        try{
+        numero2= Double.parseDouble(numeroActual);
+        double resultado= 0;
+        
+        switch (operador){
+        
+            case "+": resultado= numero1 + numero2; 
+                break;
+            case "-": resultado= numero1 - numero2; 
+                break;
+            case "*": resultado= numero1 * numero2; 
+                break;
+            case "/": 
+                if (numero2 != 0){
+                resultado= numero1 / numero2;
+               } else{
+                txtResultado.setText("Error: Division por 0");
+             
+                }
+                break;                
+        }
+        
+        txtResultado.setText(String.valueOf(resultado));
+        numeroActual= String.valueOf(resultado);
+        
+        }catch(Exception e){
+        
+             txtResultado.setText("Error");
+        }
+
+    }//GEN-LAST:event_btnResultadoActionPerformed
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+       numero1 = 0;
+       numero2 = 0;
+       operador = "";
+       numeroActual = "";
+       txtResultado.setText("0");
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -376,6 +437,7 @@ public class Desafìo5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnComa;
     private javax.swing.JButton btnDivision;
     private javax.swing.JButton btnMultiplicacion;
