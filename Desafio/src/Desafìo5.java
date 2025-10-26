@@ -60,25 +60,40 @@ public class Desafìo5 extends javax.swing.JFrame {
         txtResultado.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtResultado.setForeground(new java.awt.Color(153, 51, 0));
         txtResultado.setText("0");
-        panel1.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 13, 200, 30));
+        panel1.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 13, 200, 40));
 
-        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 290, 50));
+        getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 290, 60));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnN8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnN8.setForeground(new java.awt.Color(204, 102, 0));
         btnN8.setText("8");
+        btnN8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnN8ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnN8, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 6, 59, 36));
 
         btnN9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnN9.setForeground(new java.awt.Color(204, 102, 0));
         btnN9.setText("9");
+        btnN9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnN9ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnN9, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 6, 59, 36));
 
         btnN7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnN7.setForeground(new java.awt.Color(204, 102, 0));
         btnN7.setText("7");
+        btnN7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnN7ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnN7, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 6, 59, 36));
 
         btnN4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -94,11 +109,21 @@ public class Desafìo5 extends javax.swing.JFrame {
         btnN5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnN5.setForeground(new java.awt.Color(204, 102, 0));
         btnN5.setText("5");
+        btnN5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnN5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnN5, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 48, 59, 36));
 
         btnN6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnN6.setForeground(new java.awt.Color(204, 102, 0));
         btnN6.setText("6");
+        btnN6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnN6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnN6, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 48, 59, 36));
 
         btnN1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -114,16 +139,31 @@ public class Desafìo5 extends javax.swing.JFrame {
         btnN2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnN2.setForeground(new java.awt.Color(204, 102, 0));
         btnN2.setText("2");
+        btnN2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnN2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 90, 59, 36));
 
         btnN3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnN3.setForeground(new java.awt.Color(204, 102, 0));
         btnN3.setText("3");
+        btnN3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnN3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 90, 59, 36));
 
         btnN0.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnN0.setForeground(new java.awt.Color(204, 102, 0));
         btnN0.setText("0");
+        btnN0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnN0ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnN0, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 132, 136, 36));
 
         btnComa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -191,12 +231,56 @@ public class Desafìo5 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN1ActionPerformed
-        // TODO add your handling code here:
+                numeroActual += "1";
+        txtResultado.setText(numeroActual);
     }//GEN-LAST:event_btnN1ActionPerformed
 
     private void btnN4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN4ActionPerformed
-        // TODO add your handling code here:
+         numeroActual += "4";
+        txtResultado.setText(numeroActual);
     }//GEN-LAST:event_btnN4ActionPerformed
+
+    private void btnN0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN0ActionPerformed
+        
+        numeroActual += "0";
+        txtResultado.setText(numeroActual);
+        
+    }//GEN-LAST:event_btnN0ActionPerformed
+
+    private void btnN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN2ActionPerformed
+               numeroActual += "2";
+        txtResultado.setText(numeroActual);
+    }//GEN-LAST:event_btnN2ActionPerformed
+
+    private void btnN3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN3ActionPerformed
+          numeroActual += "3";
+        txtResultado.setText(numeroActual);
+    }//GEN-LAST:event_btnN3ActionPerformed
+
+    private void btnN5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN5ActionPerformed
+        numeroActual += "5";
+        txtResultado.setText(numeroActual);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnN5ActionPerformed
+
+    private void btnN6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN6ActionPerformed
+        numeroActual += "6";
+        txtResultado.setText(numeroActual);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnN6ActionPerformed
+
+    private void btnN7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN7ActionPerformed
+        numeroActual += "7";
+        txtResultado.setText(numeroActual);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnN7ActionPerformed
+
+    private void btnN8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN8ActionPerformed
+        numeroActual += "8";
+        txtResultado.setText(numeroActual);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnN8ActionPerformed
+
+    private void btnN9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN9ActionPerformed
+        numeroActual += "9";
+        txtResultado.setText(numeroActual);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnN9ActionPerformed
 
     /**
      * @param args the command line arguments
