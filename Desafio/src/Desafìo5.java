@@ -12,6 +12,12 @@ public class Desafìo5 extends javax.swing.JFrame {
     /**
      * Creates new form Desafìo5
      */
+    
+    private double numero1 = 0;
+    private double numero2 = 0;
+    private String Operador ="";
+    private String numeroActual ="";
+    
     public Desafìo5() {
         initComponents();
     }
@@ -26,125 +32,143 @@ public class Desafìo5 extends javax.swing.JFrame {
     private void initComponents() {
 
         panel1 = new java.awt.Panel();
-        jTextField2 = new javax.swing.JTextField();
+        txtResultado = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        btnN8 = new javax.swing.JButton();
+        btnN9 = new javax.swing.JButton();
+        btnN7 = new javax.swing.JButton();
+        btnN4 = new javax.swing.JButton();
+        btnN5 = new javax.swing.JButton();
+        btnN6 = new javax.swing.JButton();
+        btnN1 = new javax.swing.JButton();
+        btnN2 = new javax.swing.JButton();
+        btnN3 = new javax.swing.JButton();
+        btnN0 = new javax.swing.JButton();
+        btnComa = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
+        btnMultiplicacion = new javax.swing.JButton();
+        btnDivision = new javax.swing.JButton();
+        btnSuma = new javax.swing.JButton();
+        btnResta = new javax.swing.JButton();
+        btnResultado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(153, 51, 0));
-        jTextField2.setText("0");
-        panel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 13, 200, 30));
+        txtResultado.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtResultado.setForeground(new java.awt.Color(153, 51, 0));
+        txtResultado.setText("0");
+        panel1.add(txtResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 13, 200, 30));
 
         getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 290, 50));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(204, 102, 0));
-        jButton1.setText("2");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 6, 59, 36));
+        btnN8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnN8.setForeground(new java.awt.Color(204, 102, 0));
+        btnN8.setText("8");
+        jPanel1.add(btnN8, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 6, 59, 36));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(204, 102, 0));
-        jButton2.setText("3");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 6, 59, 36));
+        btnN9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnN9.setForeground(new java.awt.Color(204, 102, 0));
+        btnN9.setText("9");
+        jPanel1.add(btnN9, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 6, 59, 36));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(204, 102, 0));
-        jButton3.setText("1");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 6, 59, 36));
+        btnN7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnN7.setForeground(new java.awt.Color(204, 102, 0));
+        btnN7.setText("7");
+        jPanel1.add(btnN7, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 6, 59, 36));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(204, 102, 0));
-        jButton4.setText("4");
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 48, 59, 36));
+        btnN4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnN4.setForeground(new java.awt.Color(204, 102, 0));
+        btnN4.setText("4");
+        btnN4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnN4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnN4, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 48, 59, 36));
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(204, 102, 0));
-        jButton5.setText("5");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 48, 59, 36));
+        btnN5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnN5.setForeground(new java.awt.Color(204, 102, 0));
+        btnN5.setText("5");
+        jPanel1.add(btnN5, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 48, 59, 36));
 
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(204, 102, 0));
-        jButton6.setText("6");
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 48, 59, 36));
+        btnN6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnN6.setForeground(new java.awt.Color(204, 102, 0));
+        btnN6.setText("6");
+        jPanel1.add(btnN6, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 48, 59, 36));
 
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(204, 102, 0));
-        jButton7.setText("7");
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 90, 59, 36));
+        btnN1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnN1.setForeground(new java.awt.Color(204, 102, 0));
+        btnN1.setText("1");
+        btnN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnN1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 90, 59, 36));
 
-        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(204, 102, 0));
-        jButton8.setText("8");
-        jPanel1.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 90, 59, 36));
+        btnN2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnN2.setForeground(new java.awt.Color(204, 102, 0));
+        btnN2.setText("2");
+        jPanel1.add(btnN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 90, 59, 36));
 
-        jButton9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(204, 102, 0));
-        jButton9.setText("9");
-        jPanel1.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 90, 59, 36));
+        btnN3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnN3.setForeground(new java.awt.Color(204, 102, 0));
+        btnN3.setText("3");
+        jPanel1.add(btnN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 90, 59, 36));
 
-        jButton10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(204, 102, 0));
-        jButton10.setText("0");
-        jPanel1.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 132, 136, 36));
+        btnN0.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnN0.setForeground(new java.awt.Color(204, 102, 0));
+        btnN0.setText("0");
+        jPanel1.add(btnN0, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 132, 136, 36));
 
-        jButton12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton12.setForeground(new java.awt.Color(204, 102, 0));
-        jButton12.setText(",");
-        jPanel1.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 132, 59, 36));
+        btnComa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnComa.setForeground(new java.awt.Color(204, 102, 0));
+        btnComa.setText(",");
+        jPanel1.add(btnComa, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 132, 59, 36));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 310, 180));
 
-        jButton13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton13.setForeground(new java.awt.Color(204, 102, 0));
-        jButton13.setText("*");
+        btnMultiplicacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnMultiplicacion.setForeground(new java.awt.Color(204, 102, 0));
+        btnMultiplicacion.setText("*");
 
-        jButton14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton14.setForeground(new java.awt.Color(204, 102, 0));
-        jButton14.setText("/");
+        btnDivision.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDivision.setForeground(new java.awt.Color(204, 102, 0));
+        btnDivision.setText("/");
 
-        jButton15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton15.setForeground(new java.awt.Color(204, 102, 0));
-        jButton15.setText("+");
+        btnSuma.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSuma.setForeground(new java.awt.Color(204, 102, 0));
+        btnSuma.setText("+");
 
-        jButton16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton16.setForeground(new java.awt.Color(204, 102, 0));
-        jButton16.setText("-");
+        btnResta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnResta.setForeground(new java.awt.Color(204, 102, 0));
+        btnResta.setText("-");
+
+        btnResultado.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnResultado.setForeground(new java.awt.Color(204, 102, 0));
+        btnResultado.setText("=");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnSuma, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnResta, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnMultiplicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnDivision, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(39, 39, 39))
         );
         jPanel3Layout.setVerticalGroup(
@@ -152,17 +176,27 @@ public class Desafìo5 extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
-                .addGap(16, 16, 16))
+                    .addComponent(btnDivision, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(btnMultiplicacion, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(btnSuma, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                    .addComponent(btnResta, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                .addGap(14, 14, 14)
+                .addComponent(btnResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 290, 60));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 290, 100));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnN1ActionPerformed
+
+    private void btnN4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnN4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnN4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,24 +234,25 @@ public class Desafìo5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btnComa;
+    private javax.swing.JButton btnDivision;
+    private javax.swing.JButton btnMultiplicacion;
+    private javax.swing.JButton btnN0;
+    private javax.swing.JButton btnN1;
+    private javax.swing.JButton btnN2;
+    private javax.swing.JButton btnN3;
+    private javax.swing.JButton btnN4;
+    private javax.swing.JButton btnN5;
+    private javax.swing.JButton btnN6;
+    private javax.swing.JButton btnN7;
+    private javax.swing.JButton btnN8;
+    private javax.swing.JButton btnN9;
+    private javax.swing.JButton btnResta;
+    private javax.swing.JButton btnResultado;
+    private javax.swing.JButton btnSuma;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField2;
     private java.awt.Panel panel1;
+    private javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables
 }
