@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import javax.swing.*;
 
 /**
  *
@@ -63,9 +64,25 @@ public class SelectorLenguajes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lstLenguajesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstLenguajesMouseClicked
-        // TODO add your handling code here:
+         if (evt.getClickCount() == 2) { // doble clic
+                    String lenguaje = lstLenguajes.getSelectedValue();
+                    mostrarInfoLenguaje(lenguaje);
+                }
     }//GEN-LAST:event_lstLenguajesMouseClicked
 
+        private void mostrarInfoLenguaje(String lenguaje) {
+        String info = switch (lenguaje) {
+            case "Java" -> "Java es un lenguaje orientado a objetos y multiplataforma.";
+            case "Python" -> "Python es un lenguaje interpretado, simple y muy usado en ciencia de datos.";
+            case "C++" -> "C++ es un lenguaje de alto rendimiento usado en videojuegos y sistemas.";
+            case "JavaScript" -> "JavaScript es el lenguaje del desarrollo web del lado del cliente.";
+            case "C#" -> "C# es un lenguaje de Microsoft, usado con .NET para apps y juegos.";
+           
+            default -> "Lenguaje desconocido.";
+        };
+
+        JOptionPane.showMessageDialog(this, info, "Información sobre " + lenguaje, JOptionPane.INFORMATION_MESSAGE);
+    }
     /**
      * @param args the command line arguments
      */
