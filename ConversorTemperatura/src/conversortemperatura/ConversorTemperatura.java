@@ -4,6 +4,9 @@
  */
 package conversortemperatura;
 
+import modelo.Conversor;
+import vista.InterfazConversor;
+import controlador.ControladorConversor;
 /**
  *
  * @author Ceciia
@@ -14,7 +17,15 @@ public class ConversorTemperatura {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Crear modelo y vista
+    InterfazConversor vista = new InterfazConversor();
+    Conversor modelo = new Conversor();
+    
+    // Crear controlador
+    new ControladorConversor(vista, modelo);
+    
+    // Mostrar la ventana
+    vista.setVisible(true);
     }
     
 }
