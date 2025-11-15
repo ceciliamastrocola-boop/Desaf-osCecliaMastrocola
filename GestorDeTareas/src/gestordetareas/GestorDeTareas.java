@@ -4,6 +4,9 @@
  */
 package gestordetareas;
 
+import vista.InterfazGestor;
+import controlador.controladorTareas;
+
 /**
  *
  * @author Ceciia
@@ -15,6 +18,14 @@ public class GestorDeTareas {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+                // Crear la vista
+        InterfazGestor vista = new InterfazGestor();
+
+        // Crear el controlador (conecta los botones con la lógica)
+        new controladorTareas(vista);
+
+        // Mostrar la vista
+        vista.setVisible(true);
     }
     
 }

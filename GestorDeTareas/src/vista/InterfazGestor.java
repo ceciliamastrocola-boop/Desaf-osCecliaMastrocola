@@ -4,17 +4,22 @@
  */
 package vista;
 
+import javax.swing.DefaultListModel;
+import modelo.Tareas;
 /**
  *
  * @author Ceciia
  */
 public class InterfazGestor extends javax.swing.JFrame {
 
+    
+      public DefaultListModel<Tareas> modeloLista = new DefaultListModel<>(); 
     /**
      * Creates new form InterfazGestor
      */
     public InterfazGestor() {
         initComponents();
+        lstTareas.setModel(modeloLista);
     }
 
     /**
@@ -34,11 +39,6 @@ public class InterfazGestor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lstTareas.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(lstTareas);
 
         btnAgregar.setBackground(new java.awt.Color(153, 153, 255));
@@ -89,13 +89,12 @@ public class InterfazGestor extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnCompletada;
+    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnCompletada;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList<String> lstTareas;
+    public javax.swing.JList<Tareas> lstTareas;
     // End of variables declaration//GEN-END:variables
 }

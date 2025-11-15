@@ -9,30 +9,21 @@ package modelo;
  * @author Ceciia
  */
 public class Tareas {
-        private String nombre;
+   
+    private String nombre;
     private boolean completada;
 
     public Tareas(String nombre) {
         this.nombre = nombre;
-        this.completada = false; // por defecto no completada
+        this.completada = false;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public boolean isCompletada() {
-        return completada;
-    }
-
-    public void setCompletada(boolean completada) {
-        this.completada = completada;
+    public void marcarCompletada() {
+        this.completada = true;
     }
 
     @Override
     public String toString() {
-        // Mostrar ✔ si está completada
-        return nombre + (completada ? " ✔" : "");
+        return (completada ? "[✔] " : "[ ] ") + nombre;
     }
-    
 }
